@@ -1,0 +1,15 @@
+div.boards-index-item {
+  padding: 30px;
+  margin: 10px;
+  background-color: #F6F6F6;
+  border-radius: 5px;
+  border: solid 3px black;
+  text-align: center;
+
+}
+
+div.boards-index-item:hover {
+  cursor: pointer;
+  background-color: #F9F9F9;
+  border: solid 3px blue;
+}
