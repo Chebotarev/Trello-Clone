@@ -1,11 +1,20 @@
-div.boards-index-item {
+div.boards {
   padding: 30px;
   margin: 10px;
   background-color: #F6F6F6;
   border-radius: 5px;
   border: solid 3px black;
   text-align: center;
+  text-emphasis: 34px;
+}
 
+div.board-show {
+  @extend .boards;
+  min-height: 20pc;
+}
+
+div.boards-index-item {
+  @extend .boards;
 }
 
 div.boards-index-item:hover {
