@@ -31,7 +31,11 @@ TrelloClone.Views.BoardsIndex = Backbone.CompositeView.extend({
   },
 
   renderShow: function (event) {
-    console.log($(event.currentTarget).data('id'));
+    Backbone.history.navigate(
+      "boards/" + $(event.currentTarget).data('id'),
+      { trigger: true }
+    );
+    // console.log($(event.currentTarget).data('id'));
   }
 
 });
