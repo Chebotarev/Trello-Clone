@@ -17,5 +17,19 @@ TrelloClone.Collections.Boards = Backbone.Collection.extend({
     }
 
     return board;
+  },
+
+  getOrFetchList: function(boardId, listId) {
+    var board = this.get(boardId);
+    var list;
+
+    if (board) {
+      list = board.lists().getOrFetch(listId);
+    } else {
+      list = new TrelloClone.Models.List({ id: listId });
+      list.fetch();
+    }
+
+    return list;
   }
 });
