@@ -1,5 +1,19 @@
-TrelloClone.Views.ListsIndex = Backbone.View.extend({
+TrelloClone.Views.ListShow = Backbone.View.extend({
 
-  template: JST['lists/index']
+  template: JST['lists/show'],
+
+  className: "lists col-md-3",
+
+  initialize: function() {
+    
+  },
+
+  render: function () {
+    var content = this.template({
+      list: this.model
+    });
+    this.$el.html(content);
+    return this;
+  }
 
 });

@@ -1,7 +1,7 @@
 div.boards {
   padding: 30px;
   margin: 10px;
-  background-color: #F6F6F6;
+  background-color: #CCCCCC;
   border-radius: 5px;
   border: solid 3px black;
   text-align: center;
@@ -21,4 +21,8 @@ div.boards-index-item:hover {
   cursor: pointer;
   background-color: #F9F9F9;
   border: solid 3px blue;
+}
+
+div.board-form {
+  margin-top: 30px;
 }
