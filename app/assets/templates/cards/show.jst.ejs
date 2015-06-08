@@ -1,16 +1,5 @@
 <strong><%= card.escape('title') %></strong>
 <br>
 <div class="item-index">
-  <ul>
-    <% card.get('items').forEach(function(item) { %>
-      <li>
-        <input
-          type="checkbox"
-          name="done"
-          <%= item.done ? "checked" : "" %>
-        >
-        <%= item.title %>
-      </li>
-    <%  }); %>
-  </ul>
+  <ul class="item-index-list"></ul>
 </div>
