@@ -4,7 +4,8 @@ TrelloClone.Views.BoardsIndexItem = Backbone.View.extend({
   className: "boards-index-item col-md-3",
 
   events: {
-    "click .remove-board-btn": "removeBoard"
+    "click .remove-board-btn": "removeBoard",
+    "click .edit-board-btn": "editBoard"
   },
 
   attributes: function () {
@@ -13,9 +14,14 @@ TrelloClone.Views.BoardsIndexItem = Backbone.View.extend({
     }
   },
 
+  editBoard: function (event) {
+    event.stopPropagation();
+    console.log("Edit board");
+  },
+
   removeBoard: function (event) {
-    debugger;
-    console.log("Remove Board " + event.currentTarget);
+    event.stopPropagation();
+    this.model.destroy();
   },
 
   render: function() {
