@@ -3,7 +3,14 @@
 <div class="item-index">
   <ul>
     <% card.get('items').forEach(function(item) { %>
-      <li><%= item.title %></li>
+      <li>
+        <input
+          type="checkbox"
+          name="done"
+          <%= item.done ? "checked" : "" %>
+        >
+        <%= item.title %>
+      </li>
     <%  }); %>
   </ul>
 </div>
