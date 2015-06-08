@@ -15,12 +15,25 @@ div.board-show {
 
 div.boards-index-item {
   @extend .boards;
+  position: relative;
 }
 
 div.boards-index-item:hover {
   cursor: pointer;
   background-color: #F9F9F9;
   border: solid 3px blue;
+}
+
+button.remove-board-btn {
+  position: absolute;
+  right: 0px;
+  top: 0px;
+}
+
+button.edit-board-btn {
+  position: absolute;
+  right: 0px;
+  top: 57px;
 }
 
 div.board-form {
