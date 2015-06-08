@@ -5,7 +5,7 @@ TrelloClone.Views.ListShow = Backbone.CompositeView.extend({
   className: "lists col-md-3",
 
   initialize: function() {
-
+    
   },
 
   render: function () {
