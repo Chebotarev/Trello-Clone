@@ -4,9 +4,22 @@ module Api
     end
 
     def update
+      @item = Item.find(params[:id])
+
+      if @item.update(item_params)
+        render json: @item
+      else
+        render json: @item.errors.full_messages, status: :unprocessable_entity
+      end
     end
 
     def destroy
+    end
+
+    private
+
+    def item_params
+      params.require(:item).permit(:done)
     end
   end
 end

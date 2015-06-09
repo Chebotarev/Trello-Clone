@@ -1,6 +1,11 @@
-<input
-  type="checkbox"
-  name="done"
-  <%= item.get('done') ? "checked" : "" %>
->
-<%= item.escape('title') %>
+<div class="checkbox">
+    <label>
+      <input
+      type="checkbox"
+      class="done-toggle"
+      <%= item.get('done') ? "checked" : "" %>
+      data-id="<%= item.id %>"
+    >
+    <%= item.escape('title') %>
+  </label>
+</div>

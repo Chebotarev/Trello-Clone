@@ -8,6 +8,10 @@ TrelloClone.Views.BoardsIndexItem = Backbone.View.extend({
     "click .edit-board-btn": "editBoard"
   },
 
+  initialize: function () {
+    this.listenTo(this.model.lists(), "sync", this.render);
+  },
+
   attributes: function () {
     return {
       "data-id": this.model.id
@@ -16,7 +20,10 @@ TrelloClone.Views.BoardsIndexItem = Backbone.View.extend({
 
   editBoard: function (event) {
     event.stopPropagation();
-    console.log("Edit board");
+    Backbone.history.navigate(
+      "boards/" + this.model.id + "/edit",
+      { trigger: true }
+    );
   },
 
   removeBoard: function (event) {
@@ -28,7 +35,7 @@ TrelloClone.Views.BoardsIndexItem = Backbone.View.extend({
     var content = this.template({
       board: this.model
     });
-    this.$el.append(content);
+    this.$el.html(content);
     return this;
   }
 });

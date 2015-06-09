@@ -6,7 +6,16 @@ TrelloClone.Routers.Router = Backbone.Router.extend({
 
   routes: {
     "": "index",
+    "boards/:id/edit": "edit",
     "boards/:id": "show"
+  },
+
+  edit: function (id) {
+    var board = this.collection.getOrFetch(id);
+    var view = new TrelloClone.Views.BoardEdit({
+      model: board
+    });
+    this._swapView(view);
   },
 
   index: function () {

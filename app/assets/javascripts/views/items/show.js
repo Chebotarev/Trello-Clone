@@ -4,6 +4,10 @@ TrelloClone.Views.ItemShow = Backbone.View.extend({
 
   tagName: 'li',
 
+  events: {
+    "change .done-toggle": "toggleDone"
+  },
+
   initialize: function() {
     this.listenTo(this.model, "sync add", this.render)
   },
@@ -14,6 +18,12 @@ TrelloClone.Views.ItemShow = Backbone.View.extend({
     });
     this.$el.html(content);
     return this;
+  },
+
+  toggleDone: function (event) {
+    var newStatus = !this.model.get('done');
+    this.model.set({ done: newStatus });
+    this.model.save();
   }
 
 });
