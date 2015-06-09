@@ -20,6 +20,18 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
     this.addSubview('.list-show', listSubview);
   },
 
+  setupDrag: function () {
+    $('div.card-index').sortable();
+    $('div.card-index').draggable();
+
+    $('div.lists').droppable({
+      drop: function (event, ui) {
+        console.log("Dropped");
+        debugger
+      }
+    });
+  },
+
   render: function() {
     var content = this.template({
       board: this.model
@@ -27,6 +39,7 @@ TrelloClone.Views.BoardShow = Backbone.CompositeView.extend({
 
     this.$el.html(content);
     this.attachSubviews();
+    this.setupDrag();
     return this;
   }
 
